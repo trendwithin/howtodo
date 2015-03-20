@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @theme.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @theme.description %>
+</p>
+<% @theme.steps.each do |s| %>
+  <%= s.step %> |
+  <%= link_to 'Edit', edit_theme_step_path(@theme, s) %> |
+  <%= link_to 'Destroy', theme_step_path(@theme, s), method: :delete %>
+
+  <br />
+<% end %>
+
+<%= link_to "Add New Step", new_theme_step_path(@theme) %> |
+<%= link_to 'Edit', edit_theme_path(@theme) %> |
+<%= link_to 'Themes', themes_path %>
+
